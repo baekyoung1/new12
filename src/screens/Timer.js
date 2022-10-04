@@ -1,7 +1,5 @@
-import "../index.css";
 import styled from 'styled-components/native';
 
-import Tomato from "../assets/tomato.svg";
 const React = require('react');
 
 
@@ -13,7 +11,25 @@ const Container = styled.View`
   padding: 0 20px;
 `;
 
-
+const Buttonstyle = styled.View`
+    font-size: 1.1rem;
+    font-weight: 500; 
+    outline: none;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #778bdd;
+    border-radius: 6px;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    margin: 7px;
+`;
 
 const SvgPlay = () => (
     <svg width="55" height="55" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,84 +257,89 @@ class Timer extends React.Component {
         let goal = settingRounds.totalStudyRoundsGoal;
         return (
           <Container>
-            <div className="Countdown-timer">
-                <div className="container">
-                    <img className="tomato-img" src={Tomato}/>
-                    <div className="Countdown-time">
+            <div style={{flex: 'auto', margintop: '1vh', textalign: 'center'}} className="Countdown-timer">
+                <div style={{position: 'sticky', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="container">
+                    
+                    <div style={{color: '#778bdd', width: '90%', display: 'flex', margin: '1 auto',height: '200px', flexDirection: 'column', alignItems: 'center',justifyContent: 'center', marginTop: '10px', padding: '0', border: '10px solid #778bdd',borderRadius: '6px',fontSize: '5rem',fontWeight: '700'}} className="Countdown-time">
                         {minutes} : {seconds}
                     </div>
                     {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
-                        <button className="Button-start" onClick={this.startTimer}>
+                        <button style={{display: 'inline-block', top: '63%', borderColor: 'Transparent', backgroundColor: 'Transparent', position: 'absolute', padding: '1em 1em',   justifyContent: 'left', alignItems: 'center'}}
+                            className="Button-start" onClick={this.startTimer}>
                             <SvgPlay className="SvgPlay"/>
                         </button>
                     )}
                     {timerOn === true && timerTime >= 1000 && (
-                        <button className="Button-stop" onClick={this.stopTimer}>
+                        <button style={{display: 'inline-block', top: '63%', borderColor: 'Transparent', backgroundColor: 'Transparent', position: 'absolute', padding: '1em 1em',   justifyContent: 'left', alignItems: 'center'}}
+                            className="Button-stop" onClick={this.stopTimer}>
                             <SvgPause/>
                         </button>
                     )}
                     {timerOn === false &&
                     (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
-                        <button className="Button-start" onClick={this.startTimer}>
+                        <button style={{display: 'inline-block', top: '63%', borderColor: 'Transparent', backgroundColor: 'Transparent', position: 'absolute', padding: '1em 1em',   justifyContent: 'left', alignItems: 'center'}}
+                            className="Button-start" onClick={this.startTimer}>
                             <SvgPlay className="SvgPlay"/>
                         </button>
                     )}
                 </div>
+                
                 <div>
-                    <div className="container1">
-                <div className="goal-setting">
-                    <div className="adjustGoal">
+                    
+                    <div style={{display: 'flex', justifyContent: 'right',color: '#778bdd'}} className="container1">
+                    <div style={{display: 'table', tableLayout: 'auto', padding: '1em 1em',  marginTop: '9px', justifyContent: 'center', alignItems: 'center'}} className="goal-setting">
+                    <div style={{display: 'grid', padding: '0.5em 1em', textalign: 'center', gridtemplatecolumns: ' 0.8fr 1fr', justifyContent: 'right', alignItems: 'center'}} className="adjustGoal">
                         <p>Round</p>
                         <div className="goal-container">
                         
-                        <div className="adjustGoalContainer">
-                            <button onClick={() => this.adjustTimer("decRound", "round")}>-</button>
-                            <div className="setTime">{round}/</div>
-                            <div className="setTime">{roundPerSession} </div>
-                            <button onClick={() => this.adjustTimer("incRound",  "round")}>+</button>
+                        <div style={{display: 'inline-flex', margin:  '0.4em 1em'}} className="adjustGoalContainer">
+                            <Buttonstyle button onClick={() => this.adjustTimer("decRound", "round")}>-</Buttonstyle>
+                            <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{round}/</div>
+                            <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{roundPerSession} </div>
+                            <Buttonstyle button onClick={() => this.adjustTimer("incRound",  "round")}>+</Buttonstyle>
                         </div>
                         </div>
                     </div>
-                    <div className="adjustGoal">
+                    <div style={{display: 'grid', padding: '0.5em 1em', textalign: 'center', gridtemplatecolumns: ' 0.8fr 1fr', justifyContent: 'right', alignItems: 'center'}}  className="adjustGoal">
                         <p> Goals</p>
-                        <div className="goal-container">
+                        <div style={{ display: 'grid', gridtemplatecolumns: 'auto auto auto', alignItems: 'center', justifyContent: 'center'}} className="goal-container">
                         
-                        <div className="adjustGoalContainer">
-                            <button onClick={() => this.adjustTimer("deccGoal", "goal")}>-</button>
-                            <div className="setTime">{currentRound}/</div>
-                            <div className="setTime">{goal} </div>
-                            <button onClick={() => this.adjustTimer("inGoal", "goal")}>+</button>
+                        <div style={{display: 'inline-flex', margin:  '0.4em 1em'}} className="adjustGoalContainer">
+                            <Buttonstyle button onClick={() => this.adjustTimer("deccGoal", "goal")}>-</Buttonstyle>
+                            <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{currentRound}/</div>
+                            <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{goal} </div>
+                            <Buttonstyle button onClick={() => this.adjustTimer("inGoal", "goal")}>+</Buttonstyle>
                         </div>
                         </div>
                     </div>
                 </div>
 
-                    <div className="container-adjustment">
-                        <div className="adjustTimeOutsideContainer">
-                            <div className="adjustTime">
-                                <p> Focus Time</p>
-                                <div className="adjustTimeContainer">
-                                    <button onClick={() => this.adjustTimer("decMinutes", "study")}>-</button>
-                                    <div className="setTime">{studyLength} </div>
-                                    <button onClick={() => this.adjustTimer("incMinutes", "study")}>+</button>
+                    <div style={{display: 'table', tableLayout: 'auto', padding: '1em 1em',marginTop: '9px', alignItems: 'center', justifyContent: 'center'}} className="container-adjustment">
+                        <div style={{display: 'grid', padding: '0.5em 1em', textalign: 'center', gridtemplatecolumns: ' 0.8fr 1fr', justifyContent: 'right', alignItems: 'center'}} className="adjustTimeOutsideContainer">
+                            <div style={{display: 'inline-flex', justifyContent: 'center', alignItems: 'center', padding: '0.4em 1em'}} className="adjustTime">
+                                <p> Focus  Time</p>
+                                <div style={{display: 'inline-flex', margin:  '0.4em 1em'}} className="adjustTimeContainer">
+                                    <Buttonstyle button onClick={() => this.adjustTimer("decMinutes", "study")}>-</Buttonstyle>
+                                    <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{studyLength} </div>
+                                    <Buttonstyle button onClick={() => this.adjustTimer("incMinutes", "study")}>+</Buttonstyle>
                                 </div>
                                 <p> mins </p>
                             </div>
-                            <div className="adjustTime">
+                            <div style={{display: 'inline-flex', justifyContent: 'center', alignItems: 'center', padding: '0.4em 1em'}} className="adjustTime">
                                 <p>Short Break</p>
-                                <div className="adjustTimeContainer">
-                                    <button onClick={() => this.adjustTimer("decMinutes", "shortRest")}>-</button>
-                                    <div className="setTime">{shortRestLength} </div>
-                                    <button onClick={() => this.adjustTimer("incMinutes", "shortRest")}>+</button>
+                                <div style={{display: 'inline-flex', margin:  '0.4em 1em'}} className="adjustTimeContainer">
+                                    <Buttonstyle button onClick={() => this.adjustTimer("decMinutes", "shortRest")}>-</Buttonstyle>
+                                    <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{shortRestLength} </div>
+                                    <Buttonstyle button onClick={() => this.adjustTimer("incMinutes", "shortRest")}>+</Buttonstyle>
                                 </div>
                                 <p> mins </p>
                             </div>
-                            <div className="adjustTime">
+                            <div style={{display: 'inline-flex', justifyContent: 'center', alignItems: 'center', padding: '0.4em 1em'}} className="adjustTime">
                                 <p>Long Break</p>
-                                <div className="adjustTimeContainer">
-                                    <button onClick={() => this.adjustTimer("decMinutes", "longRest")}>-</button>
-                                    <div className="setTime">{longRestLength} </div>
-                                    <button onClick={() => this.adjustTimer("incMinutes", "longRest")}>+</button>
+                                <div style={{display: 'inline-flex', margin:  '0.4em 1em'}} className="adjustTimeContainer">
+                                    <Buttonstyle button onClick={() => this.adjustTimer("decMinutes", "longRest")}>-</Buttonstyle>
+                                    <div style={{fontsize: '20px', fontweight: '700'}} className="setTime">{longRestLength} </div>
+                                    <Buttonstyle button onClick={() => this.adjustTimer("incMinutes", "longRest")}>+</Buttonstyle>
                                 </div>
                                 <p> mins </p>
                             </div>
