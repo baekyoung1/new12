@@ -44,12 +44,14 @@ const styles = StyleSheet.create({
     margin: 10,
 
     width: '90%', 
-    display: 'flex', 
-    height: '200px', 
+    height: 200, 
     flexDirection: 'column', 
-    border: '10px solid #778bdd',
-    borderRadius: '6px',
-    fontWeight: '700'
+    borderRadius: 4,
+    bloderWeight: 700,
+
+    borderColor: "#778bdd",
+    borderWidth: 3,
+    padding: 5,
   },
 
   clockViewHeader: {

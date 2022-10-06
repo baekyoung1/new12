@@ -31,12 +31,12 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    padding: 1,
-    margin:7,
+    padding: 5,
+
   },
   button: {
-    margin: 10,
-    padding: 10,
+    margin: 5,
+    padding: 5,
   },
 });
 

@@ -56,7 +56,7 @@ const style = StyleSheet.create({
 
   },
   inputField: {
-    border: '1.5px solid #778bdd',
+    borderColor: "#778bdd",
     margin: 4,
     borderWidth: 1,
     borderRadius: 4,

@@ -1,3 +1,4 @@
+/*
 import styled from 'styled-components/native';
 
 const React = require('react');
@@ -353,3 +354,6 @@ class Timer extends React.Component {
     }
 }
 export default Timer;
+
+
+*/

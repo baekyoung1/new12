@@ -101,8 +101,8 @@ export default class Count extends React.Component {
   render() {
     return (
       <>
-        <StatusBar barStyle="light-content" />
-        <Container>
+        <Container >
+        <SafeAreaView>
           <ScrollView contentContainerStyle={styles.scrollviewContentContainer}>
             
             <CountdownTimer
@@ -130,6 +130,7 @@ export default class Count extends React.Component {
               })}
             </View>
           </ScrollView>
+          </SafeAreaView>
         </Container>
       </>
     );
