@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ChannelList, Profile, } from '../screens';
 import Todo from '../screens/Todo';
 import Memo from '../screens/Memo';
-import Timer from '../screens/Timer';
+import Count from '../screens/Count';
 import {Calendar} from '../screens/Calendar';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -94,7 +94,7 @@ const Home = ({ navigation, route }) => {
         <Tab.Screen
           name="Timer"
           
-          component={Timer}
+          component={Count}
           options={{
             headerShown:false,
             tabBarIcon: props =>

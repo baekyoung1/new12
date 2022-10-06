@@ -1,0 +1,1 @@
+import vibrate from '../utils/vibrate'

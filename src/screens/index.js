@@ -8,5 +8,6 @@ import Todo from './Todo';
 import Memo from './Memo';
 import Timer from './Timer';
 import {Calendar} from './Calendar';
+import Count from './Count';
 
-export { Signin, Signup, Profile, ChannelList, ChannelCreation, Channel, Todo, Memo, Timer, Calendar,  };
+export { Signin, Signup, Profile, ChannelList, ChannelCreation, Channel, Todo, Memo, Timer, Calendar,Count  };
