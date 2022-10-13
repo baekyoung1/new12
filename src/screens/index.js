@@ -6,8 +6,7 @@ import ChannelCreation from './ChannelCreation';
 import Channel from './Channel';
 import Todo from './Todo';
 import Memo from './Memo';
-import Timer from './Timer';
-import {Calendar} from './Calendar';
 import Count from './Count';
+import CalendarScreen from './CalendarScreen';
 
-export { Signin, Signup, Profile, ChannelList, ChannelCreation, Channel, Todo, Memo, Timer, Calendar,Count  };
+export { Signin, Signup, Profile, ChannelList, ChannelCreation, Channel, Todo, Memo, Count, CalendarScreen, };

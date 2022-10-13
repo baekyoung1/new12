@@ -5,8 +5,7 @@ import { ChannelList, Profile, } from '../screens';
 import Todo from '../screens/Todo';
 import Memo from '../screens/Memo';
 import Count from '../screens/Count';
-import {Calendar} from '../screens/Calendar';
-
+import CalendarScreen from '../screens/CalendarScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 //import styled from 'styled-components';
@@ -80,12 +79,14 @@ const Home = ({ navigation, route }) => {
         
         <Tab.Screen
           name="Calendar"
-          component={Calendar}
+          
+          component={CalendarScreen}
           options={{
+            headerShown:false,
             tabBarIcon: props =>
               TabIcon({
                 ...props,
-                name: props.focused ? 'calendar' : 'calendar-outline',
+                name: props.focused ? 'timer' : 'timer-outline',
                 
               }),
           }}/>

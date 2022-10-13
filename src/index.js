@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Timer from '../screens/Timer';
+import Count from '../screens/Count';
 
-ReactDOM.render(<Timer />, document.getElementById('root'));
+ReactDOM.render(<Count />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

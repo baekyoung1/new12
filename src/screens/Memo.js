@@ -59,7 +59,7 @@ export default function App() {
 
 
           
-          <Container SafeAreaView style={{flex:1,  }}>
+          <Container >
 
           <View  style={{flex:1,   }}>        
             <View style={{flexDirection:'row', justifyContent:'space-between'}}>
@@ -81,6 +81,7 @@ export default function App() {
               />
             </View>
 
+            <StatusBar style="auto" />
           </View>
           
           </Container>

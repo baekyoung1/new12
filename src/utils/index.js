@@ -1,1 +1,2 @@
-import vibrate from '../utils/vibrate'
+import Vibrate from '../utils/vibrate';
+
